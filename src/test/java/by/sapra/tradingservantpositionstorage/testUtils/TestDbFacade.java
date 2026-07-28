@@ -1,13 +1,17 @@
 package by.sapra.tradingservantpositionstorage.testUtils;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jpa.test.autoconfigure.TestEntityManager;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.jdbc.JdbcTestUtils;
 import org.springframework.transaction.support.TransactionTemplate;
 
 public class TestDbFacade {
+    @Autowired
     private TestEntityManager entityManager;
+    @Autowired
     private JdbcTemplate jdbc;
+    @Autowired
     private TransactionTemplate transaction;
 
     public  <T> T find(Object id, Class<T> entityClass) {
@@ -50,7 +54,7 @@ public class TestDbFacade {
         });
     }
 
-    private void cleanDatabase() {
+    public void cleanDatabase() {
         transaction.execute(status -> {
             JdbcTestUtils.deleteFromTables(
                     jdbc, ""
