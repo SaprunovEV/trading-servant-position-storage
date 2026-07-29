@@ -39,9 +39,9 @@ class CommandServiceTest extends AbstractDataTest {
         Outbox outboxEvent = getFacade().findOneByField(Outbox.class, "positionId", positionId);
 
 
-//        assertAll(() -> {
-//            assertNotNull(createEvent, "CreateEvent does not be null");
-//            assertNotNull(outboxEvent, "OutboxEvent does not be null");
-//        });
+        assertAll(() -> {
+            assertNotNull(createEvent, "CreateEvent does not be null");
+            assertNotNull(outboxEvent, "OutboxEvent does not be null");
+        });
     }
 }
