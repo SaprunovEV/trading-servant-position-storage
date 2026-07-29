@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - property:
+      name: now
+      value: now()
+      dbms: postgresql
