@@ -37,7 +37,9 @@ public class AbstractDataTest {
         registry.add("spring.datasource.username", container::getUsername);
         registry.add("spring.datasource.password", container::getPassword);
         registry.add("spring.datasource.url", container::getJdbcUrl);
-        registry.add("spring.jpa.generate-ddl", () -> true);
+//        registry.add("spring.jpa.generate-ddl", () -> true);
+        registry.add("spring.jpa.hibernate.ddl-auto", () -> "none");
+        registry.add("spring.datasource.hikari.schema", () -> "criptohelper_position");
         registry.add("spring.datasource.driver-class-name", () -> container.getDriverClassName());
         registry.add("spring.liquibase.change-log", () -> "classpath:db/changelog/db.changelog-master.yaml");
         registry.add("spring.liquibase.enabled", () -> true);
