@@ -103,7 +103,7 @@ public class TestDbFacade {
     public void cleanDatabase() {
         transaction.execute(status -> {
             JdbcTestUtils.deleteFromTables(
-                    jdbc, ""
+                    jdbc, "position_event", "outbox"
             );
             return null;
         });
