@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_schema_position_service
+      author: "Сапрунов Евгений Витальевич"
+      changes:
+        - sql: "CREATE SCHEMA IF NOT EXISTS criptohelper_position"
