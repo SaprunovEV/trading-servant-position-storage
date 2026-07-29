@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-outbox-table
+      author: "Сапрунов Евгений Витальевич"
+      changes:
+        - createTable:
+            schemaName: criptohelper_position
+            tableName: outbox
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: position_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: payload
+                  type: JSONB
+                  constraints:
+                    nullable: false
+              - column:
+                  name: topic
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sanding_status
+                  type: VARCHAR(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: send_via
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: create_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false

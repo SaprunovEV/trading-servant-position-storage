@@ -3,3 +3,9 @@ databaseChangeLog:
       name: now
       value: now()
       dbms: postgresql
+  - include:
+      file: classpath:db/changelog/changes/29-07-26_initial_schema.yaml
+  - include:
+      file: classpath:db/changelog/changes/29-07-26-create-position_event-table.yaml
+  - include:
+      file: classpath:db/changelog/changes/29-07-26-create-outbox-table.yaml

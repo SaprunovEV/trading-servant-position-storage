@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-position_event-table
+      author: "Сапрунов Евгений Витальевич"
+      changes:
+        - createTable:
+            schemaName: criptohelper_position
+            tableName: position_event
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: position_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: publish_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: max_io
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: entry_prise
+                  type: DECIMAL(19,2)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: type
+                  type: VARCHAR(30)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: leverage
+                  type: INT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: target_coin
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: pnl_coin
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: true
