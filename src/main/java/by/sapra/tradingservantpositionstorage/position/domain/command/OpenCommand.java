@@ -1,5 +1,6 @@
 package by.sapra.tradingservantpositionstorage.position.domain.command;
 
+import by.sapra.tradingservantpositionstorage.position.domain.aggregate.PositionEvent;
 import lombok.AllArgsConstructor;import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,5 +19,9 @@ public class OpenCommand {
     private Integer leverage;
     private String targetCoin;
     private String pnlCoin;
+
+    public static PositionEvent toEvent() {
+        return null;
+    }
 }
 
