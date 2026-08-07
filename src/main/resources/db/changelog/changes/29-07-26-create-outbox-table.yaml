@@ -15,14 +15,25 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: position_id
+                  name: aggregateId
                   type: VARCHAR(255)
                   constraints:
                     nullable: false
                     unique: false
               - column:
+                 name: aggregateType
+                 type: VARCHAR(255)
+                 constraints:
+                   nullable: false
+                   unique: false
+              - column:
                   name: payload
                   type: JSONB
+                  constraints:
+                    nullable: false
+              - column:
+                  name: group
+                  type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
@@ -36,7 +47,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: send_via
+                  name: send_at
                   type: TIMESTAMP
                   constraints:
                     nullable: false

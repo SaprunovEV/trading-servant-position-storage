@@ -4,8 +4,10 @@ import by.sapra.tradingservantpositionstorage.position.domain.command.OpenComman
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.UUID;
 
 public class OpenCommandTestDataBuilder implements TestDataBuilder<OpenCommand>{
+    private String positionId = UUID.randomUUID().toString();
     private BigDecimal entryPrise = BigDecimal.valueOf(.345);
     private BigDecimal maxIo = BigDecimal.valueOf(23.3456);
     private String type = "Cross Short";
@@ -23,6 +25,7 @@ public class OpenCommandTestDataBuilder implements TestDataBuilder<OpenCommand>{
     @Override
     public OpenCommand build() {
         return OpenCommand.builder()
+                .positionId(positionId)
                 .type(type)
                 .maxIo(maxIo)
                 .openDate(openDate)
